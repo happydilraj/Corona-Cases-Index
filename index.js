@@ -1,45 +1,37 @@
 function update() {
-    fetch("/data.json")           //api for the get request
-        .then(response => response.json())
-        .then(res => {
-            console.log(res)
+  fetch("/data.json") //api for the get request
+    .then((response) => response.json())
+    .then((res) => {
+      console.log(res);
 
+      res.data.forEach((element) => {
+        longitude = element.longitude;
+        latitude = element.latitude;
+        cases = element.infected;
+        country = element.name;
 
-            res.data.forEach(element => {
+        const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+          `Corona Cases in ${country} are ${cases}`
+        );
 
+        // create DOM element for the marker
+        const el = document.createElement("div");
+        el.id = "marker";
 
-                longitude = element.longitude;
-                latitude = element.latitude;
-                cases = element.infected;
-
-                if(cases >= 255)
-                color = "rgb(255,0,0)";
-
-                else
-                color = `rgb($cases,0,0)` 
-
-
-                const marker1 = new mapboxgl.Marker({
-                    draggable: false,
-                    color : color
-                })
-                    .setLngLat([longitude, latitude])
-                    .addTo(map)
-                 });
-                map.addControl(new mapboxgl.FullscreenControl());
-                map.addControl(
-                new MapboxGeocoder({
-                    accessToken: mapboxgl.accessToken,
-                    mapboxgl: mapboxgl
-                })
-            );
-        });
-        
-
-
-
-
+        // create the marker
+        new mapboxgl.Marker(el)
+          .setLngLat([longitude, latitude])
+          .setPopup(popup) // sets a popup on this marker
+          .addTo(map);
+      });
+      map.addControl(new mapboxgl.FullscreenControl());
+      map.addControl(
+      new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl
+      })
+      );
+    });
 }
 
 update();
-
