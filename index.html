@@ -16,6 +16,20 @@
             height: 100vh;
             width: 100vw;
         }
+        #marker {
+            background-image: url(/corona2.png);
+            background-size: contain;
+            width: 34px;
+            height: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+         }
+
+        .mapboxgl-popup-content{
+            background-color: #5cdfe7;
+            border-radius: 16px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -24,8 +38,12 @@
 </body>
 
 
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script><script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
-<script>
+<script
+        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script><script
+        src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    
+    
+    <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiaGFwcHlkaWxyYWoiLCJhIjoiY2w0bGJrZWw0MHJoejNpbnhhb2FwZDF2MyJ9.zJucH5aP_S4b-pk8Z6_exA';
     const map = new mapboxgl.Map({
         container: 'map', // container ID
