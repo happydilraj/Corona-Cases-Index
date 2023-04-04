@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corona Cases</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css'
+            rel='stylesheet' />
+        <link rel="stylesheet"
+            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+            type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Corona Cases</title>
+       
+       <style>
         *{
             margin: 0;
             padding: 0;
-        }
-        #map{
+         }
+         #map{
             height: 100vh;
             width: 100vw;
+         }
+         #marker {
+            background-image: url(/corona2.png);
+            background-size: contain;
+            width: 34px;
+            height: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+         }
+
+        .mapboxgl-popup-content{
+            background-color: #5cdfe7;
+            border-radius: 16px;
+            font-weight: bold;
         }
         #marker {
             background-image: url(/corona2.png);
@@ -31,14 +49,18 @@
             font-weight: bold;
         }
     </style>
-</head>
+    </head>
 
-<body>   
-<div id='map'></div>
-</body>
+    <body>
+        <div id='map'></div>
+    </body>
 
 
+<<<<<<< HEAD
 <script
+=======
+    <script
+>>>>>>> 0379cf419d21c4b6f19e31dc84397b8eeed04760
         src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script><script
         src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
     
@@ -52,7 +74,8 @@
         zoom: 1 // starting zoom
     });
     </script>
-    <script src="/index.js"></script>
     
-        
+    <script src="/index.js"></script>
+
+
 </html>
